@@ -1,0 +1,25 @@
+@import url(".config/wal/colors.css");
+
+* {
+    border-radius: 3px;
+    border: none;
+}
+
+window {
+    background: alpha(@background, 0.5);
+    border-radius: 10px;
+    color: @foreground;
+    font-family: "FiraCode Nerd Font", "FreeSerif", serif;
+    padding: 8px;
+}
+
+entry {
+    background: alpha(@background, 0.22);
+    color: @foreground;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+#entry:selected {
+    background-color: @color3;
+}
