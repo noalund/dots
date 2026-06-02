@@ -1,0 +1,41 @@
+format = """
+$directory
+$git_branch$git_status
+"""
+
+[directory]
+home_symbol = "⛺"
+
+substitutions = [
+  { from = "/\\.config(/|$)", to = "/⚙️$1", regex = true },
+  { from = "/\\.local(/|$)", to = "/🐧$1", regex = true },
+  { from = "/\\.cache(/|$)", to = "/♻️$1", regex = true },
+
+  { from = "/Desktop(/|$)", to = "/🖥️$1", regex = true },
+  { from = "/Downloads(/|$)", to = "/📬$1", regex = true },
+  { from = "/Documents(/|$)", to = "/🕯️$1", regex = true },
+  { from = "/Pictures(/|$)", to = "/📸$1", regex = true },
+  { from = "/Videos(/|$)", to = "/📽️$1", regex = true },
+  { from = "/Music(/|$)", to = "/🎷$1", regex = true },
+
+  { from = "/projects(/|$)", to = "/🎚️$1", regex = true },
+  { from = "/scores(/|$)", to = "/🎼$1", regex = true },
+  { from = "/library(/|$)", to = "/☕$1", regex = true },
+
+  { from = "/coding(/|$)", to = "/👩🏻‍💻$1", regex = true },
+  { from = "/bin(/|$)", to = "/󱆃 $1", regex = true },
+  { from = "/Trash(/|$)", to = "/🗑️$1", regex = true },
+  { from = "/office(/|$)", to = "/💼$1", regex = true },
+  { from = "/archive(/|$)", to = "/📜$1", regex = true },
+
+  { from = "/001_Confidential(/|$)", to = "/🥷🏻$1", regex = true },
+  { from = "/004_People(/|$)", to = "/👥$1", regex = true },
+
+  { from = "/Gov(/|$)", to = "/🏛️$1", regex = true },
+  { from = "/uk(/|$)", to = "/🇬🇧$1", regex = true },
+  { from = "/us(/|$)", to = "/🇺🇸$1", regex = true },
+
+  { from = "/Health(/|$)", to = "/🏥$1", regex = true },
+  { from = "/Finance(/|$)", to = "/💹$1", regex = true },
+  { from = "/Academic(/|$)", to = "/👩🏻‍🎓$1", regex = true },
+]
