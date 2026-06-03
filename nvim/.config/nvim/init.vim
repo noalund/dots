@@ -20,10 +20,6 @@ nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>ct :tabclose<CR>
 nnoremap <leader>hh :noh<CR>
 
-" pywal
-
-source ~/.cache/wal/colors-wal.vim
-
 " \gg bindings for groff & lilypond
 augroup compile_to_pdf
   autocmd!
@@ -48,8 +44,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'vimwiki/vimwiki'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
+
+" pywal16
+
+set notermguicolors
+colorscheme wal
 
 " nvim-tree
 lua require("nvim-tree").setup()
@@ -61,7 +63,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'pywal',
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
