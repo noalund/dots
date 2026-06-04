@@ -1,5 +1,8 @@
 --ignore-errors
 # --no-playlist
+--embed-thumbnail
+--embed-metadata
+--convert-thumbnails jpg
 
 # Save in ~/Videos
 -o ~/Downloads/%(title)s.%(ext)s
