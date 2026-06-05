@@ -52,7 +52,6 @@ window#waybar {
 #custom-mullvad {
     background: transparent;
     padding: 0 10px;
-    margin: 0 -6px;
     border-radius: 6px;
 }
 
@@ -68,9 +67,15 @@ window#waybar {
     border-radius: 6px;
 }
 
+#mpd {
+    background: transparent;
+    border-radius: 6px;
+    padding: 0 24px;
+}
+
 #wireplumber {
     padding: 0 10px;
-    margin: 0 33px;
+    margin: 0 12px;
     background: transparent;
     border-radius: 6px;
 }
@@ -85,6 +90,7 @@ window#waybar {
 #tray:hover,
 #network:hover,
 #cpu:hover,
+#mpd:hover,
 #wireplumber:hover,
 #custom-birthday-clock:hover,
 #hyprland-window:hover,

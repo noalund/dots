@@ -5,6 +5,7 @@
     ["tray",
     "custom/mullvad",
     "wireplumber", 
+    "mpd",
     "cpu", 
     "custom/bitcoin", 
     "custom/weather", 
@@ -14,16 +15,15 @@
     "custom/birthday-clock"],
 
     "hyprland/window": {
-        "max-length": 100
+        "max-length": 50
     },
-
     "tray": {
     },
     "custom/mullvad": {
     	"exec": "~/.local/bin/vpn-status",
 	"interval": 10,
 	"return-type": "text",
-	"tooltip": false,
+	"tooltip": true,
 	"on-click": "kitty -e sh -c 'mullvad status -v; bash'",
 	"on-click-right": "kitty -e 'vpn-connect'"
     },
@@ -33,6 +33,18 @@
 	"scroll-step": 5,
 	"on-click": "kitty -e alsamixer",
 	"on-click-right": "sh -c 'exec qpwgraph >/dev/null 2>&1 &'"
+    },
+    "mpd": {
+        "format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
+        "tooltip": true,
+        "tooltip-format": "{artist} - {album} - {title}",
+        "interval": 5,
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        },
+        "on-click": "mpc toggle",
+	"on-click-right": "kitty -e rmpc"
     },
     "cpu": {
         "format": "  {usage}%",
