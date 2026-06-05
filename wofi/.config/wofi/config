@@ -14,5 +14,5 @@ allow_images=true
 image_size=40
 gtk_dark=false
 
-key_up=k
-key_down=j
+key_up=Up,Ctrl-p
+key_down=Down,Ctrl-n
