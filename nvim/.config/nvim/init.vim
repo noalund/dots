@@ -45,6 +45,8 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'vimwiki/vimwiki'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'dylanaraps/wal.vim'
+Plug 'saghen/blink.cmp', { 'tag': 'v1.*' }
+Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
@@ -115,3 +117,22 @@ require('lualine').setup {
   extensions = {}
 }
 END
+
+"blink.cmp
+lua << EOF
+require('blink.cmp').setup({
+  keymap = { preset = 'default' },
+  appearance = {
+    nerd_font_variant = 'mono'
+  },
+  completion = {
+    documentation = { auto_show = false }
+  },
+  sources = {
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
+  },
+  fuzzy = {
+    implementation = "prefer_rust_with_warning"
+  }
+})
+EOF
