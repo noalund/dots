@@ -19,6 +19,8 @@ endfunction
 nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>ct :tabclose<CR>
 nnoremap <leader>hh :noh<CR>
+nnoremap <C-n> n
+nnoremap <C-p> N
 
 " 1-,2-,3-,etc. binding for album track ordering purposes
 xnoremap <leader>tn :<C-u>'<,'>s/^/\=line('.')-line("'<")+1 . '-'/<CR>
