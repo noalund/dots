@@ -60,11 +60,11 @@ swayimg.viewer.on_key("Escape", exit_viewer)
 
 -- vim bindings (viewer)
 
-swayimg.viewer.on_key("p", function()
+swayimg.viewer.on_key("n", function()
     swayimg.viewer.switch_image("prev")
 end)
 
-swayimg.viewer.on_key("n", function()
+swayimg.viewer.on_key("p", function()
     swayimg.viewer.switch_image("next")
 end)
 
