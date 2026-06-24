@@ -53,14 +53,14 @@
 	"on-click": "kitty -e btop"
     },
     "custom/bitcoin": {
-        "exec": "curl -s rate.sx/1BTC | awk '{printf \"₿%.2f\", $1}'",
+        "exec": "~/.local/bin/bitcoin",
         "interval": 1800,
         "format": " {} ",
 	"on-click": "kitty -e bash -c 'curl rate.sx/btc@30D; echo; read -p \"Press Enter to close...\"'",
 	"on-click-right": "kitty -e bash -c 'curl rate.sx; echo; read -p \"Press Enter to close...\"'"
     },
     "custom/weather": {
-        "exec": "bash -c 'LOC=$(<\"$HOME/.location\"); curl -s wttr.in/$LOC?format=%c%t'",
+        "exec": "~/.local/bin/weather",
         "interval": 1800,
         "format": " {} ",
 	"on-click": "kitty -e bash -c 'LOC=$(cat \"$HOME/.location\"); curl wttr.in/$LOC; echo; read -p \"Press Enter to close...\"'",
