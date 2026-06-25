@@ -55,6 +55,7 @@
     "custom/bitcoin": {
         "exec": "~/.local/bin/bitcoin",
         "interval": 1800,
+	"return-type": "json",
         "format": " {} ",
 	"on-click": "kitty -e bash -c 'curl rate.sx/btc@30D; echo; read -p \"Press Enter to close...\"'",
 	"on-click-right": "kitty -e bash -c 'curl rate.sx; echo; read -p \"Press Enter to close...\"'"
@@ -62,6 +63,7 @@
     "custom/weather": {
         "exec": "~/.local/bin/weather",
         "interval": 1800,
+	"return-type": "json",
         "format": " {} ",
 	"on-click": "kitty -e bash -c 'LOC=$(cat \"$HOME/.location\"); curl wttr.in/$LOC; echo; read -p \"Press Enter to close...\"'",
 	"on-click-middle": "~/.local/bin/sunrise-sunset",
@@ -86,6 +88,6 @@
         "exec": "bash -c 'BDAY=$(<\"$HOME/.birthday\"); echo \"{\\\"text\\\": \\\"$(date +\"%a, %d. %b %H:%M \")\\\", \\\"tooltip\\\": \\\"$( [ $(date +%m-%d) = \"$BDAY\" ] && echo is birthday || echo not birthday )\\\"}\"'",
         "interval": 60,
         "return-type": "json",
-	"on-click-right": "kitty -e calcurse"
+	"on-click": "kitty -e calcurse"
     }
 }
