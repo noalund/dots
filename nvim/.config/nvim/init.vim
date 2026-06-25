@@ -40,8 +40,11 @@ nnoremap <A-Space> z=
 command! -nargs=? AddWord execute 'spellgood ' . (empty(<q-args>) ? expand('<cword>') : <q-args>)
 command! -nargs=? RemoveWord execute 'spellwrong ' . (empty(<q-args>) ? expand('<cword>') : <q-args>)
 
-" 4 spaces for tabs in HTML/CSS/JS
-autocmd FileType html,css,javascript,sh setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+" 4 spaces for tabs in HTML/CSS/JS/Bash/Python
+autocmd FileType html,css,javascript,sh,python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+" 2 spaces for Vim Script
+autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
