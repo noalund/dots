@@ -88,6 +88,7 @@
         "exec": "bash -c 'BDAY=$(<\"$HOME/.birthday\"); echo \"{\\\"text\\\": \\\"$(date +\"%a, %d. %b %H:%M \")\\\", \\\"tooltip\\\": \\\"$( [ $(date +%m-%d) = \"$BDAY\" ] && echo is birthday || echo not birthday )\\\"}\"'",
         "interval": 60,
         "return-type": "json",
-	"on-click": "kitty -e calcurse"
+	"on-click": "dunstctl history-pop",
+	"on-click-right": "kitty -e calcurse"
     }
 }
