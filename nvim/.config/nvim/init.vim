@@ -22,8 +22,28 @@ nnoremap <leader>hh :noh<CR>
 nnoremap <C-n> n
 nnoremap <C-p> N
 
-" 1-,2-,3-,etc. binding for album track ordering purposes
-xnoremap <leader>tn :<C-u>'<,'>s/^/\=line('.')-line("'<")+1 . '-'/<CR>
+" apply numbered prefix conventions to selected lines:
+" simple 1-,2-,3-,etc. for album track ordering
+" ...
+" increment on line immediately before selection for photos
+" e.g., ["2001 - test.jpg", "test.mp4", "test.png"] -->
+" ["2001 - test.jpg", "2002 - test.mp4", "2003 - test.png", etc.]
+" assumes "test.mp4" is first *selected* line
+function! NumberSelected()
+  let choice = input('Convention? [1=music, 2=images]: ')
+
+  if choice ==# '1'
+    execute "'<,'>s/^/\\=line('.')-line(\"'<\")+1 . '-'/"
+  elseif choice ==# '2'
+    let n = str2nr(matchstr(getline(line("'<") - 1), '^\d\+')) + 1
+    for lnum in range(line("'<"), line("'>"))
+      call setline(lnum, n . ' - ' . getline(lnum))
+      let n += 1
+    endfor
+  endif
+endfunction
+
+xnoremap <leader>tn <Esc>:call NumberSelected()<CR>
 
 " \gg bindings for groff & lilypond
 augroup compile_to_pdf
