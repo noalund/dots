@@ -86,6 +86,11 @@ run  = "cd ~/.config"
 desc = "Cd to ~/.config"
 
 [[mgr.prepend_keymap]]
+on   = [ "g", ">" ]
+run  = "cd ~/.dotfiles"
+desc = "Cd to ~/.dotfiles"
+
+[[mgr.prepend_keymap]]
 on   = [ "g", "s" ]
 run  = "cd ~/.local/bin"
 desc = "Cd to ~/.local/bin"
