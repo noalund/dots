@@ -9,7 +9,3 @@
 
 [colors]
     background = "#FC8EAC"
-
-[play_sound]
-    summary = "*"
-    script = "~/.local/bin/notify-horn"
