@@ -13,88 +13,49 @@ window#waybar {
     padding: 5px 0;
 }
 
-#modules-left,
-#modules-right {
-    margin: 0 11px;
-    padding: 3px 10px;
-}
-
-#workspaces button {
-    background: transparent;
-    color: alpha(@foreground, 0.8);
-    padding: 0 10px;
-}
-
-#workspaces button.active {
-    color: @foreground;
-    background: alpha(@color3, 0.18);
-    border-radius: 6px;
-    padding: 0 10px;
-}
-
-#workspaces button:hover {
-    color: @foreground;
-    background: alpha(@color3, 0.25);
-    border-radius: 6px;
-}
-
-#hyprland-window,
-#custom-bitcoin,
 #tray,
+#custom-mullvad,
+#wireplumber,
+#cpu,
+#custom-bitcoin,
+#custom-weather,
+#battery,
 #network,
+#language,
 #custom-birthday-clock {
     background: transparent;
-    padding: 0 10px;
-    margin: 0 6px;
-    border-radius: 6px;
-}
-
-#custom-mullvad {
-    background: transparent;
-    padding: 0 32px;
-    border-radius: 6px;
-}
-
-#battery {
-    background: transparent;
-    padding: 0 10px;
-    margin: 0 10px;
-    border-radius: 6px;
-}
-
-#cpu {
-    background: transparent;
-    border-radius: 6px;
+    margin-right: 10px;
 }
 
 #mpd {
     background: transparent;
-    border-radius: 6px;
-    margin: 0 6px;
-    padding: 0 30px;
+    margin-left: 12px;
+    margin-right: 14px;
 }
 
-#wireplumber {
-    background: transparent;
-    border-radius: 6px;
-}
-
-#custom-weather {
-    border-radius: 6px;
-}
-
-#custom-weather:hover,
-#custom-bitcoin:hover,
-#battery:hover,
+#workspaces:hover,
+#window:hover,
 #tray:hover,
-#network:hover,
-#cpu:hover,
-#mpd:hover,
+#custom-mullvad:hover,
 #wireplumber:hover,
-#custom-birthday-clock:hover,
-#hyprland-window:hover,
-#hyprland-mode:hover {
+#mpd:hover,
+#cpu:hover,
+#custom-bitcoin:hover,
+#custom-weather:hover,
+#battery:hover,
+#network:hover,
+#language:hover,
+#custom-birthday-clock:hover {
     background: alpha(@color3, 0.22);
+}
+
+#workspaces {
+    margin-right: 6px;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background: alpha(@color3, 0.44);
 }
 
 #battery.critical {

@@ -11,28 +11,30 @@
     "custom/weather", 
     "battery", 
     "network",
-    "wifi",
+    "hyprland/language",
     "custom/birthday-clock"],
 
     "hyprland/window": {
-        "max-length": 50
+        "max-length": 25
     },
     "tray": {
     },
     "custom/mullvad": {
+        "min-length": 2,
     	"exec": "~/.local/bin/vpn-status",
-	"interval": 10,
-	"return-type": "text",
-	"tooltip": true,
-	"on-click": "kitty -e sh -c 'mullvad status -v; bash'",
-	"on-click-right": "kitty -e 'vpn-connect'"
+        "interval": 10,
+        "return-type": "text",
+        "tooltip": true,
+        "on-click": "kitty -e sh -c 'mullvad status -v; bash'",
+        "on-click-right": "kitty -e 'vpn-connect'"
     },
     "wireplumber": {
+        "min-length": 8,
     	"format": "{volume}% ",
     	"format-muted": "Muted ",
-	"scroll-step": 5,
-	"on-click": "kitty -e alsamixer",
-	"on-click-right": "sh -c 'exec qpwgraph >/dev/null 2>&1 &'"
+        "scroll-step": 5,
+        "on-click": "kitty -e alsamixer",
+        "on-click-right": "sh -c 'exec qpwgraph >/dev/null 2>&1 &'"
     },
     "mpd": {
         "format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
@@ -44,51 +46,61 @@
             "paused": ""
         },
         "on-click": "mpc toggle",
-	"on-click-right": "kitty -e rmpc"
+        "on-click-right": "kitty -e rmpc"
     },
     "cpu": {
+        "min-length": 6,
         "format": "  {usage}%",
         "tooltip": true,
         "tooltip-format": "CPU: {usage}%",
-	"on-click": "kitty -e btop"
+        "on-click": "kitty -e btop"
     },
     "custom/bitcoin": {
         "exec": "~/.local/bin/bitcoin",
         "interval": 1800,
-	"return-type": "json",
+        "return-type": "json",
         "format": " {} ",
-	"on-click": "kitty -e bash -c 'curl rate.sx/btc@30D; echo; read -p \"Press Enter to close...\"'",
-	"on-click-right": "kitty -e bash -c 'curl rate.sx; echo; read -p \"Press Enter to close...\"'"
+        "on-click": "kitty -e bash -c 'curl rate.sx/btc@30D; echo; read -p \"Press Enter to close...\"'",
+        "on-click-right": "kitty -e bash -c 'curl rate.sx; echo; read -p \"Press Enter to close...\"'"
     },
     "custom/weather": {
         "exec": "~/.local/bin/weather",
         "interval": 1800,
-	"return-type": "json",
+        "return-type": "json",
         "format": " {} ",
-	"on-click": "kitty -e bash -c 'LOC=$(cat \"$HOME/.location\"); curl wttr.in/$LOC; echo; read -p \"Press Enter to close...\"'",
-	"on-click-middle": "~/.local/bin/sunrise-sunset",
-	"on-click-right": "kitty -e bash -c 'curl wttr.in/moon; echo; read -p \"Press Enter to close...\"'"
+        "on-click": "kitty -e bash -c 'LOC=$(cat \"$HOME/.location\"); curl wttr.in/$LOC; echo; read -p \"Press Enter to close...\"'",
+        "on-click-middle": "~/.local/bin/sunrise-sunset",
+        "on-click-right": "kitty -e bash -c 'curl wttr.in/moon; echo; read -p \"Press Enter to close...\"'"
     },
     "battery": {
         "format": "{capacity}% {icon}",
+        "min-length": 8,
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-	"format": "{icon}",
-	"format-wifi": "",
-	"format-ethernet": "",
-	"format-disconnected": "",
-	"tooltip-format-wifi": "{essid} ",
-	"tooltip-format-ethernet": "Connected ",
-	"tooltip-format-disconnected": "Disconnected",
-	"max-length": 50,
-	"on-click": "nm-connection-editor"
+        "format": "{icon}",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format-wifi": "{essid} ",
+        "tooltip-format-ethernet": "Connected ",
+        "tooltip-format-disconnected": "Disconnected",
+        "min-length": 4,
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "min-length": 3,
+        "format-en": "US",
+        "format-de": "DE"
     },
     "custom/birthday-clock": {
-        "exec": "bash -c 'BDAY=$(<\"$HOME/.birthday\"); echo \"{\\\"text\\\": \\\"$(date +\"%a, %d. %b %H:%M \")\\\", \\\"tooltip\\\": \\\"$( [ $(date +%m-%d) = \"$BDAY\" ] && echo is birthday || echo not birthday )\\\"}\"'",
+        "min-length": 2,
+        "exec": "bash -c 'BDAY=$(<\"$HOME/.birthday\"); echo \"{\\\"text\\\": \\\"$(date +\"%b %d, %H:%M \")\\\", \\\"tooltip\\\": \\\"$( [ $(date +%m-%d) = \"$BDAY\" ] && echo is birthday || echo not birthday )\\\"}\"'",
         "interval": 60,
         "return-type": "json",
-	"on-click": "dunstctl history-pop",
-	"on-click-right": "kitty -e calcurse"
+        "on-click": "dunstctl history-pop",
+        "on-click-right": "kitty -e calcurse"
     }
 }
