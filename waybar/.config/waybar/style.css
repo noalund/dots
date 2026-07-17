@@ -16,6 +16,7 @@ window#waybar {
 #tray,
 #custom-mullvad,
 #wireplumber,
+#mpd,
 #cpu,
 #custom-bitcoin,
 #custom-weather,
@@ -25,12 +26,6 @@ window#waybar {
 #custom-birthday-clock {
     background: transparent;
     margin-right: 10px;
-}
-
-#mpd {
-    background: transparent;
-    margin-left: 12px;
-    margin-right: 14px;
 }
 
 #workspaces:hover,

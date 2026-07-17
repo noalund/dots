@@ -15,7 +15,7 @@
     "custom/birthday-clock"],
 
     "hyprland/window": {
-        "max-length": 25
+        "max-length": 50
     },
     "tray": {
     },
@@ -37,6 +37,7 @@
         "on-click-right": "sh -c 'exec qpwgraph >/dev/null 2>&1 &'"
     },
     "mpd": {
+        "min-length": 9,
         "format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
         "tooltip": true,
         "tooltip-format": "{artist} - {album} - {title}",
@@ -74,7 +75,7 @@
     },
     "battery": {
         "format": "{capacity}% {icon}",
-        "min-length": 8,
+        "min-length": 7,
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
