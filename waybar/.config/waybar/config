@@ -94,7 +94,9 @@
         "format": "{}",
         "min-length": 3,
         "format-en": "US",
-        "format-de": "DE"
+        "format-de": "DE",
+        "tooltip": true,
+        "tooltip-format": "{long}"
     },
     "custom/birthday-clock": {
         "min-length": 2,
