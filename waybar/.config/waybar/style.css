@@ -50,7 +50,7 @@ window#waybar {
 
 #workspaces button.active {
     color: @foreground;
-    background: alpha(@color3, 0.44);
+    background: alpha(@color3, 0.33);
 }
 
 #battery.critical {
