@@ -37,7 +37,7 @@
         "on-click-right": "sh -c 'exec qpwgraph >/dev/null 2>&1 &'"
     },
     "mpd": {
-        "min-length": 9,
+        "min-length": 14,
         "format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
         "tooltip": true,
         "tooltip-format": "{artist} - {album} - {title}",
