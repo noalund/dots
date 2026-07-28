@@ -1,7 +1,6 @@
 ![Project Preview](./rice.png)
 
 # Noa’s Dots
-## Arch X Hyprland Rice
 
 I use macOS for music and video production, but everything else—writing, photo editing, email, and so on—is done on my custom Linux system.
 It's a relatively lightweight setup that consists mostly of FOSS CLI applications with Vim-like keybindings.
