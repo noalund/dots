@@ -1,79 +1,78 @@
 -- general
 
-swayimg.gallery.bind_reset()
-swayimg.gallery.set_thumb_size(450)
-swayimg.imagelist.set_order("numeric")
-swayimg.imagelist.enable_reverse(true)
-swayimg.imagelist.enable_fsmon(true)
-swayimg.gallery.enable_preload(false)
-swayimg.gallery.limit_cache(100)
+swayimg.viewer.bind_reset()
+swayimg.gallery.thumb_size = 450
+swayimg.imagelist.reverse = true
+swayimg.imagelist.order = "numeric"
+swayimg.imagelist.fsmon = true
+swayimg.gallery.preload = false
 
 -- vim bindings (gallery)
 
 swayimg.gallery.on_key("j", function()
-    swayimg.gallery.switch_image("down")
+    swayimg.gallery.select("down")
 end)
 
 swayimg.gallery.on_key("k", function()
-    swayimg.gallery.switch_image("up")
+    swayimg.gallery.select("up")
 end)
 
 swayimg.gallery.on_key("h", function()
-    swayimg.gallery.switch_image("left")
+    swayimg.gallery.select("left")
 end)
 
 swayimg.gallery.on_key("l", function()
-    swayimg.gallery.switch_image("right")
+    swayimg.gallery.select("right")
 end)
 
 swayimg.gallery.on_key("u", function()
-    swayimg.gallery.switch_image("pgup")
+    swayimg.gallery.select("pgup")
 end)
 
 swayimg.gallery.on_key("d", function()
-    swayimg.gallery.switch_image("pgdown")
+    swayimg.gallery.select("pgdown")
 end)
 
 swayimg.gallery.on_key("g", function()
-    swayimg.gallery.switch_image("first")
+    swayimg.gallery.select("first")
 end)
 
 swayimg.gallery.on_key("Shift-g", function()
-    swayimg.gallery.switch_image("last")
+    swayimg.gallery.select("last")
 end)
 
 -- toggle gallery --> viewer
 
 swayimg.gallery.on_key("Return", function()
-    local img = swayimg.gallery.get_image()
-    swayimg.set_mode("viewer")
-    swayimg.viewer.open(img.path)
+    swayimg.mode = "viewer"
 end)
 
 -- toggle viewer --> gallery
-local function exit_viewer()
-    swayimg.set_mode("gallery")
+
+local function exitViewer()
+    swayimg.mode = "gallery"
 end
 
-swayimg.viewer.on_key("q", exit_viewer)
-swayimg.viewer.on_key("Escape", exit_viewer)
+swayimg.viewer.on_key("Return", exitViewer)
+swayimg.viewer.on_key("q", exitViewer)
+swayimg.viewer.on_key("Escape", exitViewer)
 
 -- vim bindings (viewer)
 
 swayimg.viewer.on_key("n", function()
-    swayimg.viewer.switch_image("prev")
+    swayimg.viewer.open("prev")
 end)
 
 swayimg.viewer.on_key("p", function()
-    swayimg.viewer.switch_image("next")
+    swayimg.viewer.open("next")
 end)
 
 swayimg.viewer.on_key("g", function()
-    swayimg.viewer.switch_image("first")
+    swayimg.viewer.open("first")
 end)
 
 swayimg.viewer.on_key("Shift-g", function()
-    swayimg.viewer.switch_image("last")
+    swayimg.viewer.open("last")
 end)
 
 -- vim panning (viewer)
@@ -107,23 +106,19 @@ local function clamp(x, min, max)
 end
 
 swayimg.gallery.on_key("Shift-j", function()
-    local size = swayimg.gallery.get_thumb_size()
-    swayimg.gallery.set_thumb_size(math.max(size - 20, 50))
+    swayimg.gallery.thumb_size = clamp(swayimg.gallery.thumb_size - 20, 50, 500)
 end)
 
 swayimg.gallery.on_key("Shift-k", function()
-    local size = swayimg.gallery.get_thumb_size()
-    swayimg.gallery.set_thumb_size(math.min(size + 20, 500))
+    swayimg.gallery.thumb_size = clamp(swayimg.gallery.thumb_size + 20, 50, 500)
 end)
 
 swayimg.viewer.on_key("Shift-j", function()
-    local scale = swayimg.viewer.get_scale()
-    swayimg.viewer.set_abs_scale(clamp(scale * 0.9, 0.1, 10))
+    swayimg.viewer.scale = clamp(swayimg.viewer.scale * 0.9, 0.1, 10)
 end)
 
 swayimg.viewer.on_key("Shift-k", function()
-    local scale = swayimg.viewer.get_scale()
-    swayimg.viewer.set_abs_scale(clamp(scale * 1.1, 0.1, 10))
+    swayimg.viewer.scale = clamp(swayimg.viewer.scale * 1.1, 0.1, 10)
 end)
 
 -- wallpaper script in gallery mode:
