@@ -96,7 +96,8 @@
         "format-en": "US",
         "format-de": "DE",
         "tooltip": true,
-        "tooltip-format": "{long}"
+        "tooltip-format": "{long}",
+        "on-click": "hyprctl switchxkblayout all next"
     },
     "custom/birthday-clock": {
         "min-length": 2,
