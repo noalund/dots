@@ -21,6 +21,8 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(terminal .. " -e alsamixer"))
 
 hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(terminal .. " -e aerc -A ~/.email"))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("signal-desktop"))
+
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(terminal .. " -e rmpc"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " -e calcurse"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.local/bin/chat"))
