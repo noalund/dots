@@ -8,6 +8,7 @@ local lockscreen = "hyprlock"
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(terminal .. " -e btop"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(lockscreen))
 hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exit())
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(terminal .. " -e " .. fileManager))
