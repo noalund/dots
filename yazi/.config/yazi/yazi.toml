@@ -1,12 +1,31 @@
 [mgr]
 show_hidden = true
+sort_by = "natural"
+sort_reverse = true
+sort_dir_first = false
+linemode = "size"
 
 [opener]
-open = [
-    { run = 'zathura "$@"', orphan = true, desc = "zathura", for = "linux" },
-    { run = 'swayimg "$@"', orphan = true, desc = "swayimg", for = "linux" },
-    { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
-    { run = 'open "$@"', desc = "Open", for = "macos" },
-    { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
-    { run = 'termux-open "$1"', desc = "Open", for = "android" },
+edit = [
+    { run = "$EDITOR %s", block = true, for = "unix" },
+]
+
+play = [
+    { run = "mpv %s", orphan = true, for = "unix" },
+]
+
+read = [
+    { run = "zathura %s", orphan = true, for = "unix" },
+]
+
+image = [
+    { run = "swayimg %s", orphan = true, for = "unix" },
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "edit" },
+    { mime = "video/*", use = "play" },
+    { mime = "application/pdf", use = "read" },
+    { mime = "image/*", use = "image" },
 ]
