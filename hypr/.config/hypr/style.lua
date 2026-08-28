@@ -1,3 +1,5 @@
+local wal = dofile(os.getenv("HOME") .. "/.config/hypr/wal.lua")
+
 hl.config({
     general = {
         gaps_in  = 5,
@@ -21,8 +23,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-	    -- fix this to work with pywal later
-            color        = 0xee1a1a1a,
+            color        = wal.background,
         },
 
         blur = {
