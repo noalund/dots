@@ -10,7 +10,7 @@ edit = [
 ]
 
 play = [
-    { run = "mpv %s", orphan = true, for = "unix" },
+    { run = "mpv --force-window=yes --osc=yes %s", orphan = true, for = "unix" },
 ]
 
 read = [
@@ -25,6 +25,7 @@ image = [
 rules = [
     { mime = "text/*", use = "edit" },
     { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "play" },
     { mime = "application/pdf", use = "read" },
     { mime = "image/*", use = "image" },
 ]
