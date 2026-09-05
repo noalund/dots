@@ -6,6 +6,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/documents/coding/mcomp-cli-tools:$PATH"
 
 # Set nvim as default editor
 
