@@ -42,6 +42,14 @@ hl.config({
     },
 })
 
+-- block maximize requests from all apps
+local suppressMaximizeRule = hl.window_rule({
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+
 -- input
 hl.config({
     input = {
