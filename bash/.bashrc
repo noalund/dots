@@ -32,6 +32,12 @@ sp() {
     sudo pacman "$@"
 }
 
+# ExifTool alias
+
+scrub() {
+    exiftool -all= -overwrite_original "$@"
+}
+
 # "You shall not pass" Kitty wrapper
 sudo() {
     local REAL_SUDO="/usr/bin/sudo"
