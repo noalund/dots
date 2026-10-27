@@ -7,6 +7,11 @@ swayimg.imagelist.order = "numeric"
 swayimg.imagelist.fsmon = true
 swayimg.gallery.preload = false
 
+-- colors
+
+swayimg.viewer.set_window_background(0x00000000)
+swayimg.gallery.window_color = 0x00000000
+
 -- vim bindings (gallery)
 
 swayimg.gallery.on_key("j", function()
@@ -58,6 +63,7 @@ swayimg.viewer.on_key("q", exitViewer)
 swayimg.viewer.on_key("Escape", exitViewer)
 
 -- vim bindings (viewer)
+
 
 swayimg.viewer.on_key("n", function()
     swayimg.viewer.open("prev")
