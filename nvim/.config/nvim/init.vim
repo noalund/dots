@@ -48,7 +48,7 @@ xnoremap <leader>tn <Esc>:call NumberSelected()<CR>
 " \gg bindings for groff & lilypond
 augroup compile_to_pdf
   autocmd!
-  autocmd FileType nroff nnoremap <buffer> <leader>gg :update<CR>:silent !groff -ms -Tpdf % > %:r.pdf<CR>
+  autocmd FileType nroff nnoremap <buffer> <leader>gg :update<CR>:silent !groff -k -Kutf8 -ms -Tpdf % > %:r.pdf<CR>
   autocmd FileType lilypond nnoremap <buffer> <leader>gg :update<CR>:silent !lilypond --pdf %:r<CR>
 augroup END
 
